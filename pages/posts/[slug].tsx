@@ -24,6 +24,8 @@ const Post = ({ post, alert }: Props): JSX.Element => {
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
   }
+
+  const title = `${post.title} | Farzad's Tech Blog`
   return (
     <Layout alert={alert}>
       <Container>
@@ -35,7 +37,7 @@ const Post = ({ post, alert }: Props): JSX.Element => {
             <article className="mb-32">
               <Head>
                 <title>
-                  {post.title} | Farzad&#39;s Tech Blog
+                  {title}
                 </title>
                 <meta property="og:image" content={post.ogImage.url} />
               </Head>
